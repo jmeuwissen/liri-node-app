@@ -13,10 +13,12 @@ const spotify = new Spotify(keys.spotify);
 
 
 function spotifier(searchTerm) {
-    console.log("Giving you OMDB info for " + searchTerm + "!");
     if (searchTerm.length < 1) {
         searchTerm = "The Sign";
     }
+
+    console.log("Giving you OMDB info for " + searchTerm + "!");
+
     spotify.search({ type: 'track', query: searchTerm }, function (err, data) {
         if (err) {
             return console.log('Error occurred: ' + err);
@@ -24,7 +26,7 @@ function spotifier(searchTerm) {
         const items = data.tracks.items;
         if (searchTerm === "The Sign") {
             trackInfo = items[
-                //spotify barfed out 30+ song results in no particular order, so this finds the one matching the search searchTerm
+                //spotify barfed out 30+ song results in no particular order, so this finds the one matching the searchTerm
                 //found on stack overflow, checks which element of the 'items' array has a 'name' property that matches 'The Sign'
                 items.map(function (e) {
                     return e.name;
@@ -103,24 +105,24 @@ function switcher(option, term) {
         case 'concert-this':
             concertFinder(term)
             break;
-    
+
         case 'spotify-this-song':
             spotifier(term);
             break;
-    
+
         case 'movie-this':
             movieFinder(term);
             break;
-    
+
         case 'do-what-it-says':
-    
+
             fs.readFile("random.txt", "utf8", function (err, data) {
                 fileChunks = data.split(",");
                 console.log(fileChunks[1])
-                switcher( fileChunks[0], fileChunks[1]);
+                switcher(fileChunks[0], fileChunks[1]);
             })
             break;
-    
+
     }
 }
 switcher(process.argv[2], process.argv.slice(3).join(" "));
