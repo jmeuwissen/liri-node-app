@@ -13,11 +13,11 @@ const spotify = new Spotify(keys.spotify);
 
 
 function spotifier(searchTerm) {
-    if (searchTerm.length < 1) {
+    if (searchTerm == null) {
         searchTerm = "The Sign";
     }
 
-    console.log("Giving you OMDB info for " + searchTerm + "!");
+    console.log("Giving you Spotify info for " + searchTerm + "!");
 
     spotify.search({ type: 'track', query: searchTerm }, function (err, data) {
         if (err) {
@@ -57,14 +57,14 @@ function concertFinder(searchTerm) {
 Venue:     ${info.venue.name}
 Location:  ${info.venue.city}, ${info.venue.region}
 Date:      ${moment(info.datetime)}
-`
-        )
+
+        `)
     })
 
 }
 
 function movieFinder(searchTerm) {
-    if (searchTerm.length < 1) {
+    if (searchTerm == null) {
         searchTerm = "Mr. Nobody";
     }
 
@@ -98,7 +98,7 @@ ${info.Actors}
 }
 
 
-//this adds the feature of handling indefinite "do-what-it-says" calls!
+
 function switcher(option, term) {
     switch (option) {
 
@@ -117,9 +117,16 @@ function switcher(option, term) {
         case 'do-what-it-says':
 
             fs.readFile("random.txt", "utf8", function (err, data) {
-                fileChunks = data.split(",");
-                console.log(fileChunks[1])
-                switcher(fileChunks[0], fileChunks[1]);
+
+                const fileChunks = data.split(",");
+
+                if (fileChunks[0] === 'do-what-it-says') {
+                    console.log("Hah, not this time!");
+                }
+                else
+                    switcher(fileChunks[0], fileChunks[1]);
+
+
             })
             break;
 
