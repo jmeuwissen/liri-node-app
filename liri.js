@@ -10,15 +10,11 @@ const fs = require("fs")
 const spotify = new Spotify(keys.spotify);
 
 
-const option = process.argv[2];
-
-let term = process.argv.slice(3).join(" ");
-let URL = "";
 
 
 function spotifier(searchTerm) {
     console.log("Giving you OMDB info for " + searchTerm + "!");
-    if (process.argv.length < 4) {
+    if (searchTerm.length < 1) {
         searchTerm = "The Sign";
     }
     spotify.search({ type: 'track', query: searchTerm }, function (err, data) {
@@ -49,7 +45,7 @@ Album:     ${trackInfo.album.name}
 
 function concertFinder(searchTerm) {
     console.log("Giving you the next concert for " + searchTerm + "!")
-    URL = "https://rest.bandsintown.com/artists/" + searchTerm + "/events?app_id=" + keys.bandisintown.id;
+    const URL = "https://rest.bandsintown.com/artists/" + searchTerm + "/events?app_id=" + keys.bandisintown.id;
     axios.get(URL).then(function (response) {
         const info = response.data[0];
 
@@ -66,12 +62,12 @@ Date:      ${moment(info.datetime)}
 }
 
 function movieFinder(searchTerm) {
-    if (process.argv.length < 4) {
+    if (searchTerm.length < 1) {
         searchTerm = "Mr. Nobody";
     }
 
     console.log("Giving you OMDB info for " + searchTerm + "!")
-    URL = "http://www.omdbapi.com/?apikey=" + keys.omdb.secret + "&t=" + searchTerm;
+    const URL = "http://www.omdbapi.com/?apikey=" + keys.omdb.secret + "&t=" + searchTerm;
     axios.get(URL).then(function (response) {
         const info = response.data;
 
@@ -99,25 +95,34 @@ ${info.Actors}
     })
 }
 
-switch (option) {
 
-    case 'concert-this':
-        concertFinder(term)
-        break;
+//this adds the feature of handling indefinite "do-what-it-says" calls!
+function switcher(option, term) {
+    switch (option) {
 
-    case 'spotify-this-song':
-        spotifier(term);
-        break;
-
-    case 'movie-this':
-        movieFinder(term);
-        break;
-
-    case 'do-what-it-says':
-
-        fs.readFile("random.txt", "utf8", function (err, data) {
-            console.log(data);
-        })
-        break;
-
+        case 'concert-this':
+            concertFinder(term)
+            break;
+    
+        case 'spotify-this-song':
+            spotifier(term);
+            break;
+    
+        case 'movie-this':
+            movieFinder(term);
+            break;
+    
+        case 'do-what-it-says':
+    
+            fs.readFile("random.txt", "utf8", function (err, data) {
+                fileChunks = data.split(",");
+                console.log(fileChunks[1])
+                switcher( fileChunks[0], fileChunks[1]);
+            })
+            break;
+    
+    }
 }
+switcher(process.argv[2], process.argv.slice(3).join(" "));
+
+
