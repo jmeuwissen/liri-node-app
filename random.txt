@@ -1,1 +1,1 @@
-spotify-this-song,fingerbib
+spotify-this-song

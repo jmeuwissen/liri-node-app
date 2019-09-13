@@ -13,7 +13,7 @@ const spotify = new Spotify(keys.spotify);
 
 
 function spotifier(searchTerm) {
-    if (searchTerm == null) {
+    if (searchTerm == null || searchTerm.length < 2 ) {
         searchTerm = "The Sign";
     }
 
@@ -64,7 +64,7 @@ Date:      ${moment(info.datetime)}
 }
 
 function movieFinder(searchTerm) {
-    if (searchTerm == null) {
+    if (searchTerm == null || searchTerm.length < 2) {
         searchTerm = "Mr. Nobody";
     }
 
