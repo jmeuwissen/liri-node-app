@@ -21,7 +21,7 @@ The options for execution are as follows:
 
 * `concert-this "artist"` gives Bandisintown info
 
-#### With Input
+##### With Input
 ![stuff](/assets/images/concert-this.PNG)
 
 ### spotify-this-song
@@ -29,11 +29,11 @@ The options for execution are as follows:
 * `spotify-this-song "song"` gives Spotify info
 
 
-#### Default
+##### Default
 
 ![spotify-this-song-default](/assets/images/spotify-this-song-default.PNG)
 
-#### With Input
+##### With Input
 
 ![spotify-this-song](/assets/images/spotify-this-song.PNG)
 
@@ -43,11 +43,11 @@ The options for execution are as follows:
 * `movie-this "movie"` give IMDB info
 
 
-#### Default
+##### Default
 
 ![movie-this](/assets/images/movie-this.PNG)
 
-#### With Input
+##### With Input
 
 ![movie-this-default](/assets/images/movie-this-default.PNG)
 
