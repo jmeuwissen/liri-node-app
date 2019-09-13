@@ -17,7 +17,15 @@ These are specified via command-line arguments upon executing the program. These
 
 The options for execution are as follows:
 
+### concert-this
+
 * `concert-this "artist"` gives Bandisintown info
+
+#### Default
+
+!(./assets/images/concert-this)
+
+#### With Input
 
 * `spotify-this-song "song"` gives Spotify info
 
@@ -41,8 +49,7 @@ The options for execution are as follows:
 
 ## Implementation
 
-For control flow, the program uses a switch statement dictated by arvc[2]. Each case of the switch is given its own function (except for the file reader option because it was so simple). This was done for ease of execution of the file-input option.
+For control flow, the program uses a switch statement dictated by arvc[2]. Each case of the switch is given its own function (except for the file reader option because it was so simple). This was done for ease of execution of the file-input option. 
 
-OMDB and Band In Town were both called directly, with axios.get for simplification. Moment.js was used to format the showtime for the concert option. Spotify was called indirectly via Node-Spotify-API. Javascript fs was used to read 'random.txt' 
-
+OMDB and Band In Town were both called directly, with axios.get for simplification. Moment.js was used to format the showtime for the concert option. Spotify was called indirectly via Node-Spotify-API. Javascript fs was used to read 'random.txt'
 
