@@ -17,13 +17,13 @@ These are specified via command-line arguments upon executing the program. These
 
 The options for execution are as follows:
 
-* `<concert-this "artist">`
+* `concert-this "artist"`
 
-* `<spotify-this-song "song">`
+* `spotify-this-song "song"`
 
-* `<movie-this ">`
+* `movie-this "movie"`
 
-* `<do-what-it-says>`
+* `do-what-it-says`
 
 Each option is given its own function (except for the file reader option because it was so simple), which executes depending upon a switch statement
 
