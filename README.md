@@ -21,17 +21,35 @@ The options for execution are as follows:
 
 * `concert-this "artist"` gives Bandisintown info
 
-#### Default
-
+#### With Input
 !(./assets/images/concert-this)
 
-#### With Input
 
 * `spotify-this-song "song"` gives Spotify info
 
+
+#### Default
+
+!(./assets/images/)
+
+#### With Input
+
+!(./assets/images/)
+
 * `movie-this "movie"` give IMDB info
 
+
+#### Default
+
+!(./assets/images/)
+
+#### With Input
+
+!(./assets/images/)
+
 * `do-what-it-says` executes the contents of random.txt as though it was passed as command line options
+
+![stuff](./assets/images/)
 
 ## Technology
 
