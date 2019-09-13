@@ -24,32 +24,38 @@ The options for execution are as follows:
 #### With Input
 ![stuff](/assets/images/concert-this.PNG)
 
+### spotify-this-song
 
 * `spotify-this-song "song"` gives Spotify info
 
 
 #### Default
 
-!(./assets/images/)
+![spotify-this-song-default](/assets/images/spotify-this-song-default.PNG)
 
 #### With Input
 
-!(./assets/images/)
+![spotify-this-song](/assets/images/spotify-this-song.PNG)
+
+
+### movie-this
 
 * `movie-this "movie"` give IMDB info
 
 
 #### Default
 
-!(./assets/images/)
+![movie-this](/assets/images/movie-this.PNG)
 
 #### With Input
 
-!(./assets/images/)
+![movie-this-default](/assets/images/movie-this-default.PNG)
+
+### do-what-it-says
 
 * `do-what-it-says` executes the contents of random.txt as though it was passed as command line options
 
-![stuff](/assets/images/)
+![do-what-it-says(/assets/images/do-what-it-says.PNG)
 
 ## Technology
 
