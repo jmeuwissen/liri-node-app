@@ -22,7 +22,7 @@ The options for execution are as follows:
 * `concert-this "artist"` gives Bandisintown info
 
 #### With Input
-![stuff](/assets/images/concert-this.png)
+![stuff](/assets/images/concert-this.PNG)
 
 
 * `spotify-this-song "song"` gives Spotify info
