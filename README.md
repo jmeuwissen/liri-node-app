@@ -22,7 +22,7 @@ The options for execution are as follows:
 * `concert-this "artist"` gives Bandisintown info
 
 #### With Input
-!(./assets/images/concert-this)
+!(./assets/images/concert-this.png)
 
 
 * `spotify-this-song "song"` gives Spotify info
@@ -49,7 +49,7 @@ The options for execution are as follows:
 
 * `do-what-it-says` executes the contents of random.txt as though it was passed as command line options
 
-![stuff](./assets/images/)
+![stuff](/assets/images/)
 
 ## Technology
 
